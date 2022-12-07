@@ -16,8 +16,10 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <modules>
+  <module>springCloudApiGateway</module>
     <module>demoAuthentication</module>
     <module>BEJ_C3_S3_Containerize_Using_Docker_Compose_MC_1</module>
+
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,11 +32,7 @@
     </dependency>
 
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

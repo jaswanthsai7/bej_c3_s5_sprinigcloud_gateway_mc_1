@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/api/v1")
 public class UserController {
 
     private IUserService iUserService;
@@ -31,12 +32,12 @@ public class UserController {
 
     }
 
-    @GetMapping("api/v1/getall")
+    @GetMapping("/admin/getall")
     public ResponseEntity<?> getAllUsers() {
         return new ResponseEntity<>(this.iUserService.getAll(), HttpStatus.OK);
     }
 
-    @GetMapping("api/v1/getbyid/{id}")
+    @GetMapping("/admin/getbyid/{id}")
     public ResponseEntity<?> getUserById(@PathVariable int id) {
         return new ResponseEntity<>(this.iUserService.getUserById(id), HttpStatus.OK);
     }

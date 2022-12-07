@@ -11,6 +11,7 @@ services:
       - 8087:8087
     depends_on:
       - mysqlService
+      - apigateway
 
   music-service:
     image: music_image
@@ -23,6 +24,7 @@ services:
       - 64300:64300
     depends_on:
       - mongoService
+      - apigateway
 
   mysqlService:
     image: mysql:latest
@@ -44,6 +46,15 @@ services:
         - 27017:27017
       networks:
         - mynetwork
+
+
+  apigateway:
+    container_name: spring-cloud-api-gateway2
+    build: springCloudApiGateway/
+    networks:
+      - mynetwork
+    ports:
+      - "9002:9002"
 
 networks:
   mynetwork:
